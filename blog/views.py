@@ -5,7 +5,7 @@ from .forms import PostForm,UserLogin,UserProfilePic,UserProfileForm,CommentForm
 from django.contrib.auth import login,logout,authenticate
 from django.contrib import messages
 from django.contrib.auth.forms import UserCreationForm,AuthenticationForm
-from django.contrib.auth.decorators import login_required, logout_required
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.http import HttpResponseRedirect
 from django.urls import reverse
