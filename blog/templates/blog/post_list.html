@@ -1,0 +1,27 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+	{% for posts in post %}
+			<div class="inner-container">
+				<div class="row-blog">
+					<div class="imag">
+						<img src="{% if posts.thumbnail %}{{posts.thumbnail.url}}{% endif %}">
+					</div>
+					<div class="blog-content">
+						<div class="date">
+							{{ posts.published_date }}
+						</div>
+						<h4>
+							<a href="{% url 'post_detail' slug=post.slug %}">
+									{{ posts.title }}
+							</a>
+						</h4>
+						<p>{{ posts.text|linebreaksbr }}</p>
+					</div>
+					<div class="comment">
+						<a href="{% url 'post_detail' slug=post.slug %}"> {{posts.comments.count}}</a>
+						<a href="#">{{ posts.author }}</a>
+					</div>
+				</div>
+			</div>
+	{% endfor %}
+{% endblock %}
